@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_toolbar"/>
+
+    <FrameLayout
+        android:id="@+id/webview_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="visible"/>
+    </FrameLayout>
+
+</LinearLayout>    -->
+
+
+
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:statusBarBackground="?attr/colorPrimary"
+    android:fitsSystemWindows="false">
+
+     <android.support.design.widget.AppBarLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:theme="@style/AppTheme.AppBarOverlay"
+         android:fitsSystemWindows="true">
+
+         <android.support.v7.widget.Toolbar
+             android:id="@+id/fragment_theme_toolbar"
+             android:layout_width="match_parent"
+             android:layout_height="?attr/actionBarSize"
+             android:background="?attr/colorPrimary"
+             app:layout_scrollFlags="scroll|enterAlways"
+             app:popupTheme="@style/AppTheme.PopupOverlay"/>
+     </android.support.design.widget.AppBarLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_theme_detail"
+        android:indeterminateDrawable="@drawable/progressbar_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="visible" />
+
+    <include layout="@layout/theme_detail_container"/>
+
+</android.support.design.widget.CoordinatorLayout>

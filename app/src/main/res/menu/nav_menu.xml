@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_firstPage"
+            android:checkable="true"
+            android:icon="@drawable/home"
+            android:title="首页" />
+        <item
+            android:id="@+id/nav_internetSafe"
+            android:checkable="true"
+            android:icon="@drawable/collect"
+            android:title="互联网安全" />
+        <item
+            android:id="@+id/nav_psychology"
+            android:checkable="true"
+            android:icon="@drawable/collect"
+            android:title="日常心理学" />
+        <item
+            android:id="@+id/nav_userLike"
+            android:checkable="true"
+            android:icon="@drawable/collect"
+            android:title="用户推荐日报" />
+        <item
+            android:id="@+id/nav_noBored"
+            android:checkable="true"
+            android:icon="@drawable/collect"
+            android:title="不许无聊" />
+        <item
+            android:id="@+id/nav_design"
+            android:checkable="true"
+            android:icon="@drawable/collect"
+            android:title="设计日报" />
+        <item
+            android:id="@+id/nav_bigCompany"
+            android:checkable="true"
+            android:icon="@drawable/collect"
+            android:title="大公司日报" />
+        <item
+            android:id="@+id/nav_movie"
+            android:checkable="true"
+            android:icon="@drawable/collect"
+            android:title="电影日报" />
+
+        <item
+            android:id="@+id/nav_game"
+            android:checkable="true"
+            android:icon="@drawable/collect"
+            android:title="游戏日报" />
+        <item
+            android:id="@+id/nav_music"
+            android:checkable="true"
+            android:icon="@drawable/collect"
+            android:title="音乐日报" />
+
+    </group>
+
+
+</menu>
