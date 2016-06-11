@@ -4,7 +4,7 @@
 
 
 本项目网络层使用Volley+OkHttp3,即用Volley来进行网络通信，用OkHttp3来处理Volley的底层HTTP请求,Json解析使用Gson，数据库使用[Realm](https://realm.io/cn/),
-图片加载使用Glide+OkHttp3。
+图片加载使用Glide+OkHttp3,列表使用RecyclerView+Cardview,下来刷新使用SwipeRefreshLayout。
 
 #效果图
 ![Alt Text](https://github.com/Focfa/ZhihuNews/blob/master/screenshots/hotNews.jpg)
