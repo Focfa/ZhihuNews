@@ -212,7 +212,7 @@ public class FragmentNews extends Fragment implements SwipeRefreshLayout.OnRefre
     public void onRecyclerViewItemClick(RecyclerView.ViewHolder viewHolder) {
          if(viewHolder instanceof ZHihuNewsAdapter.ViewHolder) {
              ZHihuNewsAdapter.ViewHolder holder = (ZHihuNewsAdapter.ViewHolder) viewHolder;
-             Intent intent = new Intent(getActivity(),ZhihuContentAcitivity.class);
+             Intent intent = new Intent(getActivity(),ZhihuContentActivity.class);
              intent.putExtra(Constants.ID,holder.zHihuStory.getId());
              intent.putExtra(Constants.TITLE,holder.zHihuStory.getTitle());
              intent.putExtra(Constants.NEWS_TYPE,Constants.HOT_NEWS);

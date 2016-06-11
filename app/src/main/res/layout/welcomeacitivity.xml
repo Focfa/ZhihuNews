@@ -9,4 +9,16 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"/>
 
+    <TextView
+        android:id="@+id/image_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="50dp"
+        android:textSize="16sp"
+        android:text=""
+        android:textColor="@color/material_grey_900" />
+
 </RelativeLayout>

@@ -130,7 +130,7 @@ public class CommonFragment extends Fragment implements SwipeRefreshLayout.OnRef
     public void onRecyclerViewItemClick(RecyclerView.ViewHolder viewHolder) {
         if(viewHolder instanceof CommomFragmentAdapter.ViewHolder) {
             CommomFragmentAdapter.ViewHolder holder = (CommomFragmentAdapter.ViewHolder) viewHolder;
-            Intent intent = new Intent(getActivity(),ThemeContentAcitivity.class);
+            Intent intent = new Intent(getActivity(),ThemeContentActivity.class);
             intent.putExtra(Constants.POSITION,holder.getAdapterPosition());
             List<ThemeStory> themeStories = adapter.getThemeStoryList();
             intent.putExtra(Constants.LIST,(Serializable)themeStories);

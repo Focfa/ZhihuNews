@@ -14,7 +14,8 @@ import com.bigkoo.convenientbanner.holder.Holder;
 import com.example.zhihunews.MainActivity;
 import com.example.zhihunews.Model.ZhihuTopStories;
 import com.example.zhihunews.R;
-import com.example.zhihunews.UI.ZhihuContentAcitivity;
+import com.example.zhihunews.UI.ZhihuContentActivity;
+import com.example.zhihunews.UI.ZhihuContentActivity;
 import com.example.zhihunews.Utils.Constants;
 import com.example.zhihunews.Utils.ImagerLoad;
 
@@ -41,7 +42,7 @@ public class BannerView implements Holder <ZhihuTopStories> {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ZhihuContentAcitivity.class);
+                Intent intent = new Intent(context, ZhihuContentActivity.class);
                 intent.putExtra(Constants.ID, data.getId());
                 intent.putExtra(Constants.TITLE,data.getTitle());
                 ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
