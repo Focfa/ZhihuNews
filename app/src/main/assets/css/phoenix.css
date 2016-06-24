@@ -1,0 +1,56 @@
+
+
+
+
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, Sans-serif;
+  background: #fff;
+  padding-top: 0;
+  margin: 0,30px;
+}
+
+p {
+  text-align:justify;
+  color: #444;
+  line-height: 1.5em;
+  font-size: 17px;
+  }
+
+span {
+	color:#ff9955;
+	}
+
+h1 {
+  text-align:left;
+  margin: .67em 0;
+  font-size: 22px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 22px;
+  color: #de000000;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+  color: transparent;
+  font-size: 10px;
+  max-width:100%;
+  max-height:100%;
+}
+
+video {
+  display: inline-block;
+}

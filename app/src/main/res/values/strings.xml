@@ -19,6 +19,33 @@
     <string name="movie">电影日报</string>
     <string name="game">游戏日报</string>
     <string name="music">音乐日报</string>
+    <string name="phoenixNews">凤凰新闻</string>
+    <string name="header_line">头条</string>
+    <string name="music_phoenix">音乐</string>
+    <string name="silence">科技</string>
+    <string name="housing">房产</string>
+    <string name="car">汽车</string>
+    <string name="travel">旅游</string>
+    <string name="showbiz">娱乐</string>
+    <string name="beauty">美女</string>
+    <string name="beauty_classic">古典</string>
+    <string name="beauty_sunshine">阳光</string>
+    <string name="beauty_sublimate">气质</string>
+    <string name="beauty_fresh">清新</string>
+    <string name="beauty_pure">清纯</string>
+    <string name="beauty_adorable">萌妹</string>
+    <string name="fun">Fun来了</string>
+    <string name="pet">萌物</string>
+    <string name="video">视频</string>
+    <string name="military">军事</string>
+    <string name="sports">体育</string>
+    <string name="read">读书</string>
+    <string name="Movie">电影</string>
+    <string name="geeker">极客</string>
+    <string name="tv_show">电视娱乐</string>
+    <string name="novel">小说</string>
+    <string name="tv_phoenix">凤凰卫视</string>
+    <string name="Live_phoenix">凤凰卫视直播</string>
 
 
     <string name="no_net">获取失败，原因可能是没有网络</string>

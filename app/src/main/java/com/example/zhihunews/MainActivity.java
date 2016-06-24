@@ -26,8 +26,10 @@ import com.example.zhihunews.Model.ThemesListJson;
 import com.example.zhihunews.Net.API;
 import com.example.zhihunews.Net.Volley.VolleyManager;
 import com.example.zhihunews.UI.CommonFragment;
+import com.example.zhihunews.UI.FragmentBeauty;
 import com.example.zhihunews.UI.FragmentFresh;
 import com.example.zhihunews.UI.FragmentNews;
+import com.example.zhihunews.UI.PhoenixNewsFragment;
 import com.example.zhihunews.Utils.SPUtils;
 import com.example.zhihunews.Utils.ShowTips;
 
@@ -154,6 +156,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }else if (id == R.id.nav_music) {
             replaceFragment(CommonFragment.newInstance(CommonFragment.THEME_MUSIC),CommonFragment.THEME_MUSIC);
             toolbar.setTitle(getResources().getString(R.string.music));
+        }else if( id == R.id.nav_phoenixNews) {
+            replaceFragment(PhoenixNewsFragment.newInstance(""),getString(R.string.phoenixNews));
+            toolbar.setTitle(getString(R.string.phoenixNews));
         }
          mDrawLayout.closeDrawer(GravityCompat.START);
          return true;
@@ -189,7 +194,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             currentType = themeType;
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.content_main_container, fragment, themeType);
-            fragmentTransaction.commit();
+            fragmentTransaction.commitAllowingStateLoss();
         }
     }
 

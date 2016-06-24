@@ -60,7 +60,7 @@ public class VolleyManager {
         return request;
     }
 
-    public <T>GsonRequest<T> getGsonRequest(Object tag,String url, TypeToken<T> tTypeToken, Response.Listener<T> listener,
+    public <T>GsonRequest<T> GetGsonRequest(Object tag,String url, TypeToken<T> tTypeToken, Response.Listener<T> listener,
                                             Response.ErrorListener errorListener) {
         GsonRequest<T> request = new GsonRequest<T>(url,tTypeToken,listener,errorListener);
         request.setTag(tag);

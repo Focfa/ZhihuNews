@@ -1,6 +1,7 @@
 package com.example.zhihunews.Net.Volley;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.Cache;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
@@ -120,17 +121,53 @@ public class GsonRequest<T> extends Request<T> {
             String jsonString = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
             if (mTypeToken == null)
                 return Response.success(mGson.fromJson(jsonString, mClass),
-                        HttpHeaderParser.parseCacheHeaders(response));
+                        parseIgnoreCacheHeaders(response));
             else
                 return (Response<T>) Response.success(mGson.fromJson(jsonString, mTypeToken.getType()),
-                        HttpHeaderParser.parseCacheHeaders(response));
+                        parseIgnoreCacheHeaders(response));
         } catch (UnsupportedEncodingException e) {
             return Response.error(new ParseError(e));
         }
+      //  HttpHeaderParser.parseCacheHeaders(response)
     }
 
     @Override
     protected void deliverResponse(T response) {
         mListener.onResponse(response);
+    }
+
+
+    /*有些服务器返回的response没有cache-control，则Volley不执行缓存。
+    * 因此如果需要缓存，则忽略cache-control
+    */
+    public static Cache.Entry parseIgnoreCacheHeaders(NetworkResponse response) {
+        long now = System.currentTimeMillis();
+
+        Map<String, String> headers = response.headers;
+        long serverDate = 0;
+        String serverEtag = null;
+        String headerValue;
+
+        headerValue = headers.get("Date");
+        if (headerValue != null) {
+            serverDate = HttpHeaderParser.parseDateAsEpoch(headerValue);
+        }
+
+        serverEtag = headers.get("ETag");
+
+        final long cacheHitButRefreshed = 3 * 60 * 1000; // in 3 minutes cache will be hit, but also refreshed on background
+        final long cacheExpired = 24 * 60 * 60 * 1000; // in 24 hours this cache entry expires completely
+        final long softExpire = now + cacheHitButRefreshed;
+        final long ttl = now + cacheExpired;
+
+        Cache.Entry entry = new Cache.Entry();
+        entry.data = response.data;
+        entry.etag = serverEtag;
+        entry.softTtl = softExpire;
+        entry.ttl = ttl;
+        entry.serverDate = serverDate;
+        entry.responseHeaders = headers;
+
+        return entry;
     }
 }

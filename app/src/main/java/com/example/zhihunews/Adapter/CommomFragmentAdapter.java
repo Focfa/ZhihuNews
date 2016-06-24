@@ -1,6 +1,7 @@
 package com.example.zhihunews.Adapter;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -36,7 +37,7 @@ public class CommomFragmentAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     private static final int TYPE_HEADER = 0;
     private static final int TYPE_ITEM = 1;
     private static final int TYPE_FOOTER = 2;
-
+    private int textGrey;
 
 
     public CommomFragmentAdapter(Context context,RecyclerViewItemClick itemClick) {
@@ -62,6 +63,7 @@ public class CommomFragmentAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         Context context = holder.itemView.getContext();
+        textGrey = ContextCompat.getColor(context, R.color.darker_gray);
         if(holder instanceof ThemeHeaderViewHolder) {
             final ThemeHeaderViewHolder headerViewHolder = (ThemeHeaderViewHolder) holder;
             if(!themeJsonList.isEmpty()) {
@@ -156,7 +158,9 @@ public class CommomFragmentAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                      themeJsonList.add(0,themeJson);
                  }
              }else if(type == API.TYPE_BEFORE) {
-                 if(!themeJsonList.contains(themeJson)) {
+                 String responseTitle = themeJson.getStories().get(0).getTitle();
+                 String title = themeJsonList.get(themeJsonList.size()-1).getStories().get(0).getTitle();
+                 if(!title.equals(responseTitle)) {
                      themeJsonList.add(themeJson);
                  }
              }
@@ -174,5 +178,8 @@ public class CommomFragmentAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     public List<ThemeStory> getThemeStoryList() {
         return themeStoryList;
+    }
+    public int getTextGrey() {
+        return textGrey;
     }
 }

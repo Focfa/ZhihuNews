@@ -66,6 +66,7 @@ public class CommonFragment extends Fragment implements SwipeRefreshLayout.OnRef
     private int lastposition;
     private int themeId;
 
+
     public static CommonFragment newInstance(String argument) {
         Bundle bundle = new Bundle();
         bundle.putString(ARGUMENT, argument);
@@ -95,7 +96,7 @@ public class CommonFragment extends Fragment implements SwipeRefreshLayout.OnRef
         getData(API.TYPE_LATEST);
     }
 
-    private void setupRecyclerView() {
+    public void setupRecyclerView() {
         layoutManager = new LinearLayoutManager(getActivity());
         adapter = new CommomFragmentAdapter(getActivity(),this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -140,7 +141,8 @@ public class CommonFragment extends Fragment implements SwipeRefreshLayout.OnRef
          //   ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(),
          //           holder.mImageView,getString(R.string.shared_img));
          //   ActivityCompat.startActivity(getActivity(), intent, optionsCompat.toBundle());
-              startActivity(intent);
+            startActivity(intent);
+            holder.mTitle.setTextColor(adapter.getTextGrey());
         }
     }
 

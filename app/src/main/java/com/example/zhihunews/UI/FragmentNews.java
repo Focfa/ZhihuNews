@@ -202,7 +202,7 @@ public class FragmentNews extends Fragment implements SwipeRefreshLayout.OnRefre
                                 return;
                             }
                             error.printStackTrace();
-                            ShowTips.showSnack(((MainActivity) getActivity()).getmDrawLayout(),R.string.no_net);
+                            ShowTips.showSnack(rootview,R.string.no_net);
                         }
                     });
         }

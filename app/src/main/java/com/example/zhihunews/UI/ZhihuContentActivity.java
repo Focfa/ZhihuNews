@@ -63,11 +63,10 @@ public class ZhihuContentActivity extends AppCompatActivity {
         Intent intent = getIntent();
         toolBarTitle = intent.getStringExtra(Constants.TITLE);
         content_id = intent.getIntExtra(Constants.ID, 0);
-        newsType = intent.getStringExtra(Constants.NEWS_TYPE);
+       // newsType = intent.getStringExtra(Constants.NEWS_TYPE);
         toolbarLayout.setTitle(toolBarTitle);
-        if(newsType.equals(Constants.HOT_NEWS) ) {
-            zhihuCentent = DB.getById(realm, content_id, ZhihuCentent.class);
-        }
+        zhihuCentent = DB.getById(realm, content_id, ZhihuCentent.class);
+
         initWebView();
         if(zhihuCentent == null) {
             getContent(content_id,newsType);
@@ -85,9 +84,9 @@ public class ZhihuContentActivity extends AppCompatActivity {
                     public void onResponse(ZhihuCentent response) {
                         // Log.d("getcontent",response.getTitle());
                         // zhihuCentent = response;
-                        if(newsType.equals(Constants.HOT_NEWS)) {
-                            DB.saveOrUpdate(realm, response);
-                        }
+
+                        DB.saveOrUpdate(realm, response);
+
                         if(zhihuCentent == null) {
                             showContent(response);
                         }

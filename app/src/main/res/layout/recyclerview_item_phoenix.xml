@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp">
+
+       <ImageView
+            android:id="@+id/item_image_phoenix"
+            android:layout_alignParentRight="true"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/item_title_phoenix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/item_image_phoenix"
+            android:layout_toLeftOf="@+id/item_image_phoenix"
+            android:lineSpacingMultiplier="1.2"
+            android:maxLines="2"
+            android:textColor="@color/primary_text_material_light"
+            android:text="西方记者为何总提问中国人权问题"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/news_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/item_image_phoenix"
+            android:layout_alignParentLeft="true"
+            android:textSize="10sp"
+            android:maxLines="1"
+            android:text="凤凰新闻"/>
+
+        <TextView
+            android:id="@+id/updateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/item_image_phoenix"
+            android:layout_toLeftOf="@+id/item_image_phoenix"
+            android:layout_marginRight="10dp"
+            android:visibility="invisible"
+            android:text="3小时前"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/news_source"
+            android:layout_marginTop="10dp"
+            android:background="@color/lighter_gray" />
+
+</RelativeLayout>
+

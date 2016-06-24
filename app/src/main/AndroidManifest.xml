@@ -31,10 +31,16 @@
             android:name=".UI.ZhihuContentActivity"
             android:launchMode="singleTop"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:hardwareAccelerated="true">
         </activity>
         <activity
             android:name=".UI.ThemeContentActivity"
+            android:theme="@style/AppTheme.NoActionBar.Default">
+        </activity>
+
+        <activity
+            android:name=".UI.PhoenixNewsContentActivity"
             android:theme="@style/AppTheme.NoActionBar.Default">
         </activity>
 

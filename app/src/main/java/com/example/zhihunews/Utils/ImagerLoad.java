@@ -1,12 +1,15 @@
 package com.example.zhihunews.Utils;
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.animation.ViewPropertyAnimation;
 import com.example.zhihunews.APP;
 
 import java.net.URL;
@@ -41,12 +44,23 @@ public class ImagerLoad {
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(view);
     }
+    //属性动画
+    public static void load(String url, ViewPropertyAnimation.Animator animator, ImageView view) {
+        Glide.with(APP.getContext())
+                .load(url)
+                .animate(animator)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(view);
+    }
+
+
     //优先加载
     public static void loadWithHighPriority(String url, ImageView view) {
         Glide.with(APP.getContext())
                 .load(url)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .priority(Priority.HIGH)
+                .crossFade()
                 .into(view);
     }
 
@@ -66,4 +80,18 @@ public class ImagerLoad {
                 .thumbnail(size)
                 .into(imageView);
     }
+
+    ViewPropertyAnimation.Animator animationObject = new ViewPropertyAnimation.Animator() {
+        @Override
+        public void animate(View view) {
+            // if it's a custom view class, cast it here
+            // then find subviews and do the animations
+            // here, we just use the entire view for the fade animation
+            view.setAlpha( 0f );
+
+            ObjectAnimator fadeAnim = ObjectAnimator.ofFloat( view, "alpha", 0f, 1f );
+            fadeAnim.setDuration( 300 );
+            fadeAnim.start();
+        }
+    };
 }
